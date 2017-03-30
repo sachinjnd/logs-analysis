@@ -1,0 +1,23 @@
+https://github.com/ClockworkNet/wtop
+https://github.com/ClockworkNet/wtop/wiki/CookbookLogrep
+
+
+logrep -o 'status,count(*),avg(msec),min(msec),max(msec),avg(bytes),min(bytes),max(bytes)' access_log
+
+logrep -f 'msec<1000' -o 'status,count(*)'
+
+logrep -f 'url~/urlpathhere/' -o 'status,count(*),avg(msec),min(msec),max(msec),avg(bytes),min(bytes),max(bytes)' access_log
+
+logrep -o 'status,count(*),msec<1000'  ----- NA
+
+
+cat  /log/apache-log/access_log | grep '03/Feb'| wc -l;
+
+
+cat 1000_access_log | grep ' 200 ' | grep 'indiatimes.com 0/'| wc -l
+
+
+
+
+logrep -f 'url~/sdnjce' -o 'url' access_log > test.txt
+
